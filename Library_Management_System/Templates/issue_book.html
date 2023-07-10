@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a book</title>
+    <title>Issue Book</title>
     <style>
         .image img{
             position: relative;
@@ -21,14 +21,14 @@
             margin-top: 20px;
             right:35%;
             font-size: 2.5em;
-            text-align: center;   
+            text-align: center;
         }
 
         .add_heading h2{
             position: absolute;
             top: 10%;
             margin-top: 20px;
-            right:45%;
+            right:47%;
             text-align: center;
             color: rgb(236, 12, 12);
         }
@@ -36,14 +36,14 @@
         .add_a_book{
             position: absolute;
             top: 150px;
-            right: 86%;
+            right: 86%;            
             width: 200px;
             padding: 5px;
             border: 3px solid black;
             border-radius : 10px;
             text-align: center;
             justify-content: center;
-            cursor: pointer;  
+            cursor: pointer;
         }
 
         .add_a_user{
@@ -56,7 +56,7 @@
             border-radius : 10px;
             text-align: center;
             justify-content: center;
-            cursor: pointer;    
+            cursor: pointer;
         }
 
         .book_issue{
@@ -69,7 +69,7 @@
             border-radius : 10px;
             text-align: center;
             justify-content: center;
-            cursor: pointer; 
+            cursor: pointer;
         }
 
         .book_return{
@@ -84,17 +84,17 @@
             justify-content: center;
             cursor: pointer;
         }
-        
+       
         .search_book{
             position: absolute;
             top: 350px;
             right: 86%;
             padding: 5px;
-            width: 200px;
+            width: 200px;           
             border: 3px solid black;
             border-radius : 10px;
             text-align: center;
-            cursor: pointer;
+            cursor: pointer; 
         }
 
         .log_out button{
@@ -107,11 +107,34 @@
             border-radius: 5px ;
             float: right;
             cursor: pointer;
-            top: 20px;
+            top: 40px;
             left: 94%;
         }
 
-        .container{
+        .xyz{
+            position:absolute;
+            right:50%;
+            display: inline-block;
+            width: 100px;
+            height: 25px;
+            background-color: green;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 5px ;
+            cursor: pointer;
+            display: grid;            
+            margin-top: 10px;
+            margin-left:0px;
+        }
+
+        .save_book{
+            position: absolute;
+            margin-top: 20px;
+            top: 260px;
+            right: 48%;
+        }
+
+        .container1{
             display: grid;    
             grid-template-columns:400px 300px 300px;
             grid-column-gap: 200px;
@@ -123,164 +146,120 @@
             grid-column-gap: 200px;
         }
 
-        .xyz{
-            display: inline-block;
-            width: 100px;
-            height: 25px;
-            background-color: green;
+        .issue_book{
+            position: absolute;
+            margin-top: 20px;
+            top: 150px;
+            right: 50%;
+        }
+
+        .issue_book_to_user{
+            position: absolute;
+            margin-top: 20px;
+            top: 200px;
+            right: 45%;
+        }
+
+        .book_code{
+            position: absolute;
+            margin-top: 20px;
+            top: 150px;
+            right: 45%;
+        }
+
+        .data_store{
             justify-content: center;
-            text-align: center;
-            border: 2px solid black;
-            border-radius: 5px ;
-            cursor: pointer;
-            display: grid;
-            margin-top: 10px;
-            margin-left:0px;
+            align-items: center;
         }
 
         input{
             border: 2px solid;
         }
+
+        input[type="date"]{
+            width: 165px;
+        }
         
-        .accession_no{
-            position: absolute;
-            top: 190px;
-            right: 50%;
-        }
-
-        .cupboard_no{
-            position: absolute;
-            top: 190px;
-            right: 30%;
-        }
-
-        .book_title{
-            position: absolute;
-            top: 240px;
-            right: 50%;
-        }
-
-        .author_name{
-            position: absolute;
-            top: 240px;
-            right: 30%;
-        }
-
-        .publisher{
-            position: absolute;
-            top: 290px;
-            right: 50%;
-        }
-
-        .quantity{
-            position: absolute;
-            top: 290px;
-            right: 50%;
-        }
-
-        .save_book{
-            position: absolute;
-            top: 340px;
-            right: 40%;
-        }
     </style>
 </head>
 <body style="background-image: url('static/plain_img.jpg');  height: 900px;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;">
+    {{message}}
+    <table>
+        <table class="box">
 
-    <div class="box">
-        
-        <div class="log_out">
-            <a href="login">
-                <button>Log out</button>
+    <div class="log_out">
+        <a href="login">
+            <button>Log out</button>
+        </a>
+    </div>
+
+    <div class="heading">
+        <h2>Library Management System</h2>
+    </div>
+
+    <div class="add_heading">
+        <br>
+        <h2>Issue Book</h2>
+    </div>
+
+    <form action="issue_book" method="post">
+
+    <div class="container1">
+            
+        <div class="add_a_book">
+            <a href="add_a_book">
+                Add a Book
             </a>
         </div>
         
-        <div class="heading">
-            <h2>Library Management System</h2>
-        </div>
-
-        <div class="add_heading">
+        <div class="book_code">
+            Accession Number
             <br>
-            <h2>Add a Book</h2>
+            <input type="number" name="bookcode">
+        </div>
+
+        <div class="issue_book_to_user">
+            Issue to
+            <br>
+            <input type="number" name="MIS">
+        </div>    
+    </div>
+    <div class="container2">
+        <div class="add_a_user">
+            <a href="add_user">
+                Add User
+            </a>
+        </div>
+
+        <div class="save_book">
+            <input type="submit" class="xyz"/>
+        </div>
+    </div>
+    
+    <div class="container3">
+        <div class="book_issue">
+            <a href="issue_book">
+                Book Issue
+            </a>
         </div>
         
-        <form action="add_a_book" method="post">
+        <div class="book_return">
+            <a href="book_return">
+                Book Return    
+            </a>
+        </div>
         
-        <div class="container">
-            
-            <div class="add_a_book" id="horizontal">
-                <a href="add_a_book">
-                    Add a Book
-                </a>
-            </div>
-            
-            <div class="accession_no" id="horizontal">
-                Accession Number
-                <br>
-                <input type="number" name="bookcode" id="">
-            </div>
-            
-            <div class="cupboard_no" id="horizontal">
-                Cupboard Number
-                <br>
-                <input type="number" name="cupboardNo" id="">
-            </div>
-            
-            <div class="add_a_user" id="horizontal">
-                <a href="add_user">
-                    Add User
-                </a>
-            </div>
-
-            <div class="book_title" id="horizontal">
-                Book Title
-                <br>
-                <input type="text" name="name" id="name">
-            </div>
-
-            <div class="author_name" id="horizontal">
-                Author Name
-                <br>
-                <input type="text" name="author" id="">
-            </div>
-
-            <div class="book_issue" id="horizontal">
-                <a href="issue_book">
-                    Book Issue
-                </a>
-            </div>
-
-            <div class="quantity" id="horizontal">
-                Quantity
-                <br>
-                <input type="number" name="quantity" id="">
-            </div>
-        </div>
-
-        <div class="container2">
-            
-            <div class="book_return" id="horizontal">
-                <a href="book_return">
-                    Book Return    
-                </a>
-            </div>
-
-            <div class="save_book">
-                <input type="submit" class="xyz"/>
-            </div>
-        </div>
-
-        <div class="search_book" id="horizontal">
+        <div class="search_book">
             <a href="search_book">
                 Search Books
             </a>
         </div>
-
-       </form>
     </div>
-    
+    </form>   
+</table>
+
 </body>
 </html>

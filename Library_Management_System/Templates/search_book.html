@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Book</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        .image img{
+            position: relative;
+            width:100%;
+            height: 850px;
+            padding: 4px;
+        }
+
+        .container h2 {
+            position: absolute;
+            top: 2%;
+            margin-top: 20px;
+            right:35%;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .add_heading h2 {
+            position: absolute;
+            top: 10%;
+            margin-top: 20px;
+            right:45%; 
+            text-align: center;
+            color: rgb(236, 12, 12);
+        }
+
+        .add_a_book {
+            position: absolute;
+            top: 150px;
+            right: 87%;            
+            width: 200px;
+            padding: 5px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .add_a_user {
+            position: absolute;
+            top: 200px;
+            right: 87%;
+            width: 200px;
+            padding: 5px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .xyz{
+            position:absolute;
+            right:-3%;
+            display: inline-block;
+            width: 100px;
+            height: 25px;
+            background-color: green;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 5px ;
+            cursor: pointer;
+            display: grid;
+            margin-top: 10px;
+            margin-left:0px;
+        }
+
+        .book_issue {
+            position: absolute;
+            top: 250px;
+            right: 87%;
+            padding: 5px;
+            width: 200px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .book_return {
+            position: absolute;
+            top: 300px;
+            right: 87%;
+            padding: 5px;
+            width: 200px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .search_book {
+            position: absolute;
+            top: 350px;
+            right: 87%;
+            padding: 5px;
+            width: 200px;           
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .log_out button {
+            position: absolute;
+            width: 100px;
+            height: 25px;
+            background-color: rgb(12, 239, 12);
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 5px ;
+            float: right;
+            cursor: pointer;
+            top: 15px;
+            left: 94%;
+        }
+
+        .container1 {
+            display: grid;
+            grid-template-columns:700px  700px;
+            grid-column-gap: 200px;
+        }
+
+        .container2{
+            display: grid;
+            grid-template-columns:600px 600px 600px ;
+            grid-column-gap: 200px;
+        }
+
+        .container3{
+            display: grid;
+            grid-template-columns:600px 600px 600px ;
+            grid-column-gap: 200px;
+        }
+
+        .choice1{
+            margin: 0px 200px;
+            position: absolute;
+            top: 170px;
+            right: 0%;
+            font-size: x-large;            
+        }
+
+        .choice2{
+            margin:0px 200px;
+            position: absolute;
+            top: 170px;
+            right: 50%;
+            font-size: x-large;
+        }
+
+        .choice3{
+            margin:0px 200px;
+            position: absolute;
+            top: 170px;
+            right: 20%;
+            font-size: x-large;    
+        }
+
+        .search_words{
+            position: absolute;
+            margin-top: 20px;
+            top: 210px;
+            right: 45%;
+        }
+
+        .save_button{
+            position: absolute;
+            padding-left: 500px;
+            top: 300px;
+            right: 49%;
+        }
+
+        input[type="submit"]{
+            text-decoration:black;
+        }
+
+        input{
+            border: 2px solid;
+        }
+        
+        input[type=submit]{
+            color: green;
+        }
+
+        .table{
+            position: absolute;
+            top: 500px;
+        }
+
+        .start{
+            position: absolute;
+            top: 470px;
+        }
+
+        .end{
+            position: absolute;
+            top: 470px;
+            right: 85%;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('static/plain_img.jpg');  height: 900px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+
+    <div class="log_out">
+        <a href="login">
+            <button>Log out</button>
+        </a>
+    </div>
+    <form action="search_book" method="POST">
+    <div class="box">
+        <div class="container">
+            <h2>Library Management System</h2>
+        </div>
+
+        <div class="add_heading">
+            <br>
+            <h2>Search Book</h2>        
+        </div>
+
+        <div class="container1">
+            
+            <div class="choice1">
+                <input type="radio" name="for_search" value="choice1">Search by Title
+            </div>
+
+            <div class="choice2">
+                <input type="radio" name="for_search" value="choice2">Search by Author
+            </div>
+            
+            <div class="choice3">
+                <input type="radio" name="for_search" value="choice3">Search by Accession Number
+            </div>
+
+        </div>
+        
+        <div class="container2">
+            <div class="add_a_book">
+                <a href="add_a_book">
+                    Add a Book
+                </a>
+            </div>
+            
+            <div class="search_words">
+                Enter your Search words
+                <br>
+                <input type="text" name="query" id="query">
+            </div>
+            
+        </div>
+        
+        <div class="container3">
+            <div class="add_a_user">
+                <a href="add_user">
+                    Add User
+                </a>
+            </div>
+        
+            <div class="save_button">
+                <input type="submit" class="xyz" style="color:black;">
+            </div>
+        </div>
+        
+        <div class="book_issue">
+            <a href="issue_book">
+                Book Issue
+            </a>
+        </div>
+        
+        <div class="book_return">
+            <a href="book_return">
+                Book Return                 
+            </a>
+        </div>
+        
+        <div class="search_book">
+            <a href="search_book">
+                Search Books
+            </a>
+        </div>
+    
+    </div>
+        
+    </form>
+
+    <br>
+    <br>
+
+    
+	<table class="table table-bordered">
+		
+		<tbody>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Cupboard No.</th>
+                    <th>Quantity</th>
+                    <th>Is Available</th>
+                    <th>Accession</th>
+                </tr>
+            </thead>
+
+
+            
+
+            <div class="start">
+                {% for row in results %}
+
+            </div>
+			
+
+			 <tr>
+				<td>{{ row[0] }}</td>
+				<td>{{ row[1] }}</td>
+				<td>{{ row[2] }}</td>
+				<td>{{ row[3] }}</td>
+				<td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+			</tr>
+			 <div class="end">
+                {% endfor %}
+             </div>
+		</tbody>
+	</table>
+
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <style>
+        .image img{
+            position: relative;
+            width:100%;
+            height: 850px;
+            padding: 4px;
+        }
+
+        .container h2{
+            position: absolute;
+            top: 2%;
+            margin-top: 20px;
+            right:35%;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .add_heading h2{
+            position: absolute;
+            top: 10%;
+            margin-top: 20px;
+            right:47%;
+            text-align: center;
+            color: rgb(236, 12, 12);
+        }
+
+        .xyz{ 
+            position:absolute;
+            right:-5%;
+            display: inline-block;
+            width: 100px;
+            height: 25px;
+            background-color: green;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 5px ;
+            cursor: pointer;
+            display: grid;            
+            margin-top: 10px;
+            margin-left:0px;
+        }
+        
+        .add_a_book{
+            position: absolute;
+            top: 150px;
+            right: 86%;
+            width: 200px;
+            padding: 5px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .add_a_user{
+            position: absolute;
+            top: 200px;
+            right: 86%;
+            width: 200px;
+            padding: 5px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .book_issue{
+            position: absolute;
+            top: 250px;
+            right: 86%;
+            padding: 5px;
+            width: 200px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .book_return{
+            position: absolute;
+            top: 300px;
+            right: 86%;
+            padding: 5px;
+            width: 200px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+       
+        .search_book{
+            position: absolute;
+            top: 350px;
+            right: 86%;
+            padding: 5px;
+            width: 200px;
+            border: 3px solid black;
+            border-radius : 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .save{
+             display: flex;
+            justify-content: center;
+        }
+            
+        .log_out button{
+            position: absolute;
+            width: 100px;
+            height: 25px;
+            background-color: rgb(12, 239, 12);
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 5px ;
+            float: right;
+            cursor: pointer;
+            top: 20px;
+            left: 94%;
+        } 
+
+        .new_entry{ 
+            display: flex;
+        }
+
+        .line2{
+            display: flex;
+        }
+        
+        .user_name{
+            position: absolute;
+            padding-left: 500px;
+            top: 190px;
+            right: 45%;
+        }
+
+        .mis{
+            position: absolute;
+            padding-left: 500px ;
+            top: 240px;
+            right: 45%;
+        }
+
+        .password{
+            padding-left: 300px ;
+        }
+
+        .user_type{
+            padding-left: 500px;
+        }
+
+        .save_name{
+            position: absolute;
+            padding-left: 500px;
+            top: 300px;
+            right: 49%;
+        }
+
+        input{
+            border: 2px solid;
+        }
+       
+        
+    </style>
+</head>
+
+<body style="background-image: url('static/plain_img.jpg');  height: 900px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+
+    <div class="log_out">
+        <a href="login">
+            <button>Log out</button>
+        </a>
+    </div>
+
+    <div class="container">
+        <h2>Library Management System</h2>
+    </div>
+
+    <div class="add_heading">
+        <br>
+        <h2>Add User</h2>
+    </div>
+
+    <div class="new_entry">
+        
+        <div class="add_a_book">
+            <a href="add_a_book">
+                Add a Book
+            </a>
+        </div>
+
+        <form action="add_user" method="post">
+        
+        <div class="user_name">
+            <label for="login">
+                User Name        
+                <br>
+                <input type="text" name="name">
+            </label>
+        </div>
+    </div>
+
+    <div class="line2">
+        <div class="add_a_user">
+            <a href="add_user">
+                Add User
+            </a>
+        </div>
+    
+        <div class="mis">
+            <label for="login">
+                MIS
+                <br>
+                <input type="text" name="mis">
+            </label>
+        </div>
+    </div>
+
+    <div class="line3">
+    
+        <div class="book_issue">
+            <a href="issue_book">
+                Book Issue
+            </a>
+        </div>
+    
+        <div class="save_name">
+            <input type="submit" class="xyz">
+
+        </div>
+    </div>
+    
+    <div class="book_return">
+        <a href="book_return">
+            Book Return    
+        </a>
+    </div>
+
+    <div class="search_book">
+        <a href="search_book">
+            Search Books
+        </a>
+    </div>    
+    </form> 
+</body>
+</html>
